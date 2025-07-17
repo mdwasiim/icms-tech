@@ -1,0 +1,31 @@
+eureka:
+  client:
+    jersey:
+      enabled: false
+    service-url:
+      default-zone: 'http://localhost:8761/eureka/'
+  instance:
+    instance-id: '${spring.application.name}:${random.value}'
+server:
+  port: 8080
+spring:
+  application:
+    name: ms-gateway-service
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-product-service
+              uri: lb://ms-product-service
+              predicates:
+                - Path=/products/**
+            - id: ms-order-service
+              uri: lb://ms-order-service
+              predicates:
+                - Path=/orders/**
+debug: true
