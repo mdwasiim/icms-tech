@@ -1,0 +1,5 @@
+# Created at 2025-07-19T23:03:11.794
+Boot Manifest-JAR contains absolute paths in classpath 'E:\2025\codeBase\icms-tech\icms - webclient\ms-registry-service\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
