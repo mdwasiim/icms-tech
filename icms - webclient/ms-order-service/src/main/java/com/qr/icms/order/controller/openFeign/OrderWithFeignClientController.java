@@ -1,4 +1,4 @@
-package com.qr.icms.order.controller;
+package com.qr.icms.order.controller.openFeign;
 
 import com.qr.icms.order.Client.ProductServiceClient;
 import com.qr.icms.order.model.Product;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/orders/open-feign")
 public class OrderWithFeignClientController {
 
 

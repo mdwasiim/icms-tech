@@ -4,22 +4,28 @@ eureka:
       enabled: false
     service-url:
       default-zone: http://localhost:8761/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${random.value}
+#  instance:
+#    instance-id: ${spring.application.name}:${random.value}
+
 server:
   port: 8080
+
 spring:
   application:
     name: ms-gateway-service
+
   cloud:
     gateway:
-      routes:
-        - id: ms-product-service
-          uri: lb://ms-product-service
-          predicates:
-            - Path=/products/**
-        - id: ms-order-service
-          uri: lb://ms-order-service
-          predicates:
-            - Path=/orders/**
+      server:
+        webflux:
+          routes:
+            - id: ms-product-service
+              uri: lb://ms-product-service
+              predicates:
+                - Path=/products/**
+            - id: ms-order-service
+              uri: lb://ms-order-service
+              predicates:
+                - Path=/orders/open-feign/**,/orders/web-client/**,/orders/built-in-event/**
+
 debug: true

@@ -4,8 +4,8 @@ eureka:
             enabled: false
         service-url:
             default-zone: http://localhost:8761/eureka/
-    instance:
-        instance-id: ${spring.application.name}:${random.value}
+#    instance:
+#        instance-id: ${spring.application.name}:${random.value}
 server:
     port: 8082
 spring:

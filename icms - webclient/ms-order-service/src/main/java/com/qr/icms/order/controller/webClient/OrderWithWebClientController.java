@@ -1,13 +1,9 @@
-package com.qr.icms.order.controller;
+package com.qr.icms.order.controller.webClient;
 
 import com.qr.icms.common.message.ICMSRequestEntity;
 import com.qr.icms.common.webclient.WebClientService;
-import com.qr.icms.order.Client.ProductServiceClient;
-import com.qr.icms.order.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientSsl;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @RestController
-@RequestMapping("/orders/webclient")
+@RequestMapping("/orders/web-client")
 public class OrderWithWebClientController {
 
 
